@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.webp"/>
+    <title>Contact Information</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        /* Global Styles */
+        body {
+            background-color: #f4f7f6; /* Soft light gray */
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #fff; /* White card */
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .header {
+            font-size: 2rem;
+            color: rgb(218, 28, 138); /* Pink */
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .contact-item img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .contact-item a {
+            color: rgb(218, 28, 138); /* Pink */
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: rgb(218, 28, 138); /* Darker pink */
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: rgb(218, 28, 138); /* Pink */
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            margin-top: 20px; /* Adjusted margin */
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            font-size: 0.9rem;
+            color: #7f8c8d; /* Subtle gray for footer text */
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 200px; /* Adjusted footer position */
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+            }
+            .contact-item img {
+                width: 25px;
+                height: 25px;
+            }
+
+            .contact-item a {
+                font-size: 1rem;
+            }
+
+            footer {
+                font-size: 0.8rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+            }
+
+            .contact-item img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .contact-item a {
+                font-size: 0.8rem;
+            }
+
+            footer {
+                font-size: 0.7rem;
+                margin-bottom: -30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Contact Information</div>
+        <div class="contact-item">
+            <img src="img/email.png" alt="Email Icon">
+            <a href="mailto:assiaalilech07@gmail.com" id="email">assiaalilech07@gmail.com</a>
+        </div>
+        <div class="contact-item">
+            <img src="img/instagram.png" alt="Instagram Icon">
+            <a href="https://www.instagram.com/assia__alilech_09" id="instagram">assia__alilech_09</a>
+        </div>
+        <div class="contact-item">
+            <img src="img/phone-call.png" alt="Phone Icon">
+            <a href="tel:+212638417033" id="phone-call">0638417033</a>
+        </div>
+         <div class="contact-item">
+            <img src="img/whatsapp (1).png" alt="WhatsApp Icon">
+            <a href="https://wa.me/212638417033" id="whatsapp">WhatsApp</a>
+        </div>
+        <div class="contact-item">
+            <img src="img/linkedin.png" alt="LinkedIn Icon">
+            <a href="https://www.linkedin.com/in/Assia Alilech" id="linkedin">LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- Back to home link -->
+    <a href="index.html" class="back-link">Back to home</a>
+    <a href="portfolio.html" class="back-link">Back to Portfolio</a>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 My Portfolio - All Rights Reserved
+    </footer>
+</body>
+</html>

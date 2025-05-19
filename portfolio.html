@@ -1,0 +1,208 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.webp"/>
+    <title>My Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        /* Global Styles */
+        body {
+            background-color: #f4f7f6; /* Soft light gray */
+            font-family: 'Roboto', sans-serif; /* Clean and modern font */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Make sure the content fills the full height */
+            flex-direction: column; /* Center content vertically */
+        }
+
+        .card {
+            background-color: #fff; /* White card */
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            display: flex;
+            justify-content: space-between;
+            width: 700px;
+            max-width: 800px;
+            padding: 30px;
+        }
+
+        .section {
+            width: 48%;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: rgb(218, 28, 138); /* Pink color */
+            font-weight: 700;
+            margin-bottom: 15px;
+            margin-left: 70px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #34495e; /* Darker gray for readability */
+            margin-bottom: 30px;
+            margin-left: 80px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Space between buttons */
+            align-items: center;
+        }
+
+        .a {
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff; /* White text */
+            background-color: rgb(218, 28, 138); /* Pink background */
+            padding: 7px 9px;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            transition: all 0.3s ease;
+        }
+
+        .a:hover {
+            background-color: rgb(195, 25, 125); /* Slightly darker pink */
+            transform: translateY(-3px); /* Lift effect */
+            color: #fff;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #7f8c8d; /* Subtle gray for footer text */
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: rgb(218, 28, 138); /* Pink */
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .card {
+                width: 80%;
+                padding: 20px;
+            }
+
+            .section {
+                width: 45%;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .button-container {
+                gap: 12px;
+            }
+
+            .a {
+                font-size: 0.9rem;
+                padding: 5px 8px;
+            }
+
+            footer {
+                font-size: 0.8rem;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .section {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .button-container {
+                gap: 10px;
+            }
+
+            .a {
+                font-size: 0.8rem;
+                padding: 4px 6px;
+            }
+
+            footer {
+                font-size: 0.6rem;
+            }
+            }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- Left section for Figma projects -->
+        <div class="section">
+            <h1>Figma Projects</h1>
+            <p>Explore my design projects:</p>
+            <div class="button-container">
+                <a href="1designe.html" class="a" aria-label="The Human Factor Figma Design">The Human Factor</a>
+                <a href="2designe.html" class="a" aria-label="Solicode Figma Design">Solicode</a>
+                <a href="3designe.html" class="a" aria-label="bosfiha Figma Design">electroBousfiha</a>
+            </div>
+        </div>
+
+        <!-- Right section for Coding projects -->
+        <div class="section">
+            <h1>Coding Projects</h1>
+            <p>Explore my coding projects:</p>
+            <div class="button-container">
+                <a href="1Coding.html" class="a" aria-label="Patesserie Project">Patesserie Project</a>
+                <a href="2coding.html" class="a" aria-label="Library Project 1">Trouver Un Livre</a>
+                <a href="3coding.html" class="a" aria-label="Library Project 2">Library App</a>
+                <a href="4coding.html" class="a" aria-label="Personal Information">Les Information</a>
+                <a href="5coding.html" class="a" aria-label="API Project">Restaurant Tanger</a>
+                <a href="6coding.html" class="a" aria-label="WishReads Project">background Color</a>
+                <a href="7coding.html" class="a" aria-label="Read-More Project">Read-More Project</a>
+                <a href="8coding.html" class="a" aria-label="Images Project">Chose Images</a>
+                <a href="9coding.html" class="a" aria-label="Online Store Project">Online Store</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Back Link -->
+    <div class="back-link">
+        <a href="index.html" class="back-link">Back to Home</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 My Portfolio - All Rights Reserved
+    </footer>
+</body>
+</html>

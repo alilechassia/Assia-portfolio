@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.webp"/>
+    <title>Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Courgette&display=swap');
+        body {
+            background-color: rgb(255, 255, 255);
+            font-family: 'Courgette', cursive;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            color: rgb(218, 28, 138);
+        }
+         
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-top: 80px;
+            color: rgb(218, 28, 138);
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #7f8c8d; /* Subtle gray for footer text */
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+          @media (max-width: 768px) {
+            .header {
+              align-items: center;
+              text-align: center;
+              gap: 20px;
+            }
+
+            .logo {
+              width: 70px;
+              height: auto;
+            }
+
+            .nav-links {
+              margin-top: 10px;
+            }
+
+            .nav-links a {
+              font-size: 0.9rem;
+            }
+
+            h1 {
+              font-size: 2rem;
+            }
+
+            h3 {
+              font-size: 1rem;
+            }
+
+            footer {
+              font-size: 0.7rem;
+            }
+          }
+           @media (max-width: 480px) {
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 0.9rem;
+            }
+
+            footer {
+                font-size: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="img/logo.webp" alt="Company Logo" class="logo">
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">My Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Hello World</h1>
+        <h3>I'm Alilech Assia, a web developer and web designer. For more information about me, 
+            <br>
+            you can contact me via email or visit the Contact page. You can also check out 
+            <br>
+            my portfolio to see my work.
+        </h3>
+    </main>
+    <footer>
+        &copy; 2025 My Portfolio - All Rights Reserved
+    </footer>
+</body>
+</html>
