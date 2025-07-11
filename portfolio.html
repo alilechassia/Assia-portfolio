@@ -1,208 +1,308 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/logo.webp"/>
-    <title>My Portfolio</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="img/logo.webp" />
+  <title>Portfolio - What I Do</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Courgette&display=swap');
 
-        /* Global Styles */
-        body {
-            background-color: #f4f7f6; /* Soft light gray */
-            font-family: 'Roboto', sans-serif; /* Clean and modern font */
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh; /* Make sure the content fills the full height */
-            flex-direction: column; /* Center content vertically */
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .card {
-            background-color: #fff; /* White card */
-            border-radius: 20px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            display: flex;
-            justify-content: space-between;
-            width: 700px;
-            max-width: 800px;
-            padding: 30px;
-        }
+    body {
+      background-color: #fff;
+      font-family: 'Courgette', cursive;
+    }
 
-        .section {
-            width: 48%;
-        }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-bottom: 1px solid rgba(218, 28, 138, 0.1);
+      padding: 20px 0;
+      z-index: 1000;
+    }
 
-        h1 {
-            font-size: 2rem;
-            color: rgb(218, 28, 138); /* Pink color */
-            font-weight: 700;
-            margin-bottom: 15px;
-            margin-left: 70px;
-        }
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        p {
-            font-size: 1.1rem;
-            color: #34495e; /* Darker gray for readability */
-            margin-bottom: 30px;
-            margin-left: 80px;
-        }
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 15px;
+    }
 
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px; /* Space between buttons */
-            align-items: center;
-        }
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
 
-        .a {
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: bold;
-            color: #fff; /* White text */
-            background-color: rgb(218, 28, 138); /* Pink background */
-            padding: 7px 9px;
-            border-radius: 50px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-            transition: all 0.3s ease;
-        }
+    .nav-links a {
+      color: rgb(218, 28, 138);
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+    }
 
-        .a:hover {
-            background-color: rgb(195, 25, 125); /* Slightly darker pink */
-            transform: translateY(-3px); /* Lift effect */
-            color: #fff;
-        }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: rgb(218, 28, 138);
+      transition: width 0.3s ease;
+    }
 
-        footer {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #7f8c8d; /* Subtle gray for footer text */
-        }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-        .back-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: rgb(218, 28, 138); /* Pink */
-            font-size: 1rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+    .projects {
+      padding: 150px 20px 80px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      text-align: center;
+    }
 
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            .card {
-                width: 80%;
-                padding: 20px;
-            }
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      color: rgb(218, 28, 138);
+      margin-bottom: 60px;
+      font-weight: 700;
+    }
 
-            .section {
-                width: 45%;
-                margin-bottom: 20px;
-            }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-            h1 {
-                font-size: 1.5rem;
-            }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-            p {
-                font-size: 1rem;
-            }
+    .feature-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-            .button-container {
-                gap: 12px;
-            }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(218, 28, 138, 0.15);
+    }
 
-            .a {
-                font-size: 0.9rem;
-                padding: 5px 8px;
-            }
+    .project-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-            footer {
-                font-size: 0.8rem;
-            }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(218, 28, 138, 0.2);
+    }
 
-        }
+    .project-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, rgb(218, 28, 138), #ff6b9d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+    }
 
-        @media (max-width: 480px) {
-            .card {
-                width: 90%;
-                padding: 15px;
-            }
+    .project-content {
+      padding: 25px;
+      text-align: left;
+    }
 
-            .section {
-                width: 100%;
-                margin-bottom: 15px;
-            }
+    .project-title {
+      font-size: 1.4rem;
+      color: rgb(218, 28, 138);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
 
-            h1 {
-                font-size: 1.3rem;
-            }
+    .project-description {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
 
-            p {
-                font-size: 0.9rem;
-            }
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
 
-            .button-container {
-                gap: 10px;
-            }
+    .tech-tag {
+      background: rgba(218, 28, 138, 0.1);
+      color: rgb(218, 28, 138);
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
 
-            .a {
-                font-size: 0.8rem;
-                padding: 4px 6px;
-            }
+    .project-links {
+      display: flex;
+      gap: 15px;
+    }
 
-            footer {
-                font-size: 0.6rem;
-            }
-            }
-    </style>
+    .project-link {
+      color: rgb(218, 28, 138);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 15px;
+      border: 2px solid rgb(218, 28, 138);
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .project-link:hover {
+      background: rgb(218, 28, 138);
+      color: white;
+    }
+
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: rgb(218, 28, 138);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2rem;
+      color: white;
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      color: rgb(218, 28, 138);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .feature-description {
+      color: #666;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .footer {
+      background: white;
+      color: rgb(218, 28, 138);
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .project-links {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="card">
-        <!-- Left section for Figma projects -->
-        <div class="section">
-            <h1>Figma Projects</h1>
-            <p>Explore my design projects:</p>
-            <div class="button-container">
-                <a href="1designe.html" class="a" aria-label="The Human Factor Figma Design">The Human Factor</a>
-                <a href="2designe.html" class="a" aria-label="Solicode Figma Design">Solicode</a>
-                <a href="3designe.html" class="a" aria-label="bosfiha Figma Design">electroBousfiha</a>
-            </div>
-        </div>
-
-        <!-- Right section for Coding projects -->
-        <div class="section">
-            <h1>Coding Projects</h1>
-            <p>Explore my coding projects:</p>
-            <div class="button-container">
-                <a href="1Coding.html" class="a" aria-label="Patesserie Project">Patesserie Project</a>
-                <a href="2coding.html" class="a" aria-label="Library Project 1">Trouver Un Livre</a>
-                <a href="3coding.html" class="a" aria-label="Library Project 2">Library App</a>
-                <a href="4coding.html" class="a" aria-label="Personal Information">Les Information</a>
-                <a href="5coding.html" class="a" aria-label="API Project">Restaurant Tanger</a>
-                <a href="6coding.html" class="a" aria-label="WishReads Project">background Color</a>
-                <a href="7coding.html" class="a" aria-label="Read-More Project">Read-More Project</a>
-                <a href="8coding.html" class="a" aria-label="Images Project">Chose Images</a>
-                <a href="9coding.html" class="a" aria-label="Online Store Project">Online Store</a>
-                
-            </div>
-        </div>
+  <header class="header">
+    <div class="header-content">
+      <img src="img/logo.webp" alt="Logo" class="logo" />
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Back Link -->
-    <div class="back-link">
-        <a href="index.html" class="back-link">Back to Home</a>
+  <section class="projects">
+    <h2 class="section-title">My Projects</h2>
+    <div class="projects-grid">
+      
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-image">🍽️</div>
+        <div class="project-content">
+          <h3 class="project-title">Restaurants Tanger</h3>
+          <p class="project-description">
+           Un site répertoriant des restaurants à Tanger avec toutes leurs informations et leur emplacement.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">API</span>
+          </div>
+          <div class="project-links">
+            <a href="restaurantsTanger.html" class="project-link">Voir plus</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-image">👗</div>
+        <div class="project-content">
+          <h3 class="project-title">Site ecommerce</h3>
+          <p class="project-description">
+            Plateforme de vente de vêtements pour hommes et femmes
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">API</span>
+          </div>
+          <div class="project-links">
+            <a href="ecommerce.html" class="project-link">Voir plus</a>
+          </div>
+        </div>
+      </div>
+
+    
     </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2025 My Portfolio - All Rights Reserved
-    </footer>
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 My Portfolio - All Rights Reserved</p>
+      <p>Thank you for exploring my work!</p>
+    </div>
+  </footer>
 </body>
 </html>
