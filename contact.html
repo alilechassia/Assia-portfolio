@@ -1,160 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/logo.webp"/>
-    <title>Contact Information</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="img/logo.webp" />
+  <title>Contact - Modern Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Courgette&display=swap');
 
-        /* Global Styles */
-        body {
-            background-color: #f4f7f6; /* Soft light gray */
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .container {
-            background-color: #fff; /* White card */
-            padding: 30px 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            width: 90%;
-            max-width: 400px;
-        }
+    body {
+      background-color: #fff;
+      font-family: 'Courgette', cursive;
+    }
 
-        .header {
-            font-size: 2rem;
-            color: rgb(218, 28, 138); /* Pink */
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-bottom: 1px solid rgba(218, 28, 138, 0.1);
+      padding: 20px 0;
+      z-index: 1000;
+    }
 
-        .contact-item {
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .contact-item img {
-            width: 30px;
-            height: 30px;
-        }
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 15px;
+    }
 
-        .contact-item a {
-            color: rgb(218, 28, 138); /* Pink */
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
 
-        .contact-item a:hover {
-            color: rgb(218, 28, 138); /* Darker pink */
-            text-decoration: underline;
-        }
+    .nav-links a {
+      color: rgb(218, 28, 138);
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+    }
 
-        .back-link {
-            display: inline-block;
-            color: rgb(218, 28, 138); /* Pink */
-            font-size: 1rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            margin-top: 20px; /* Adjusted margin */
-        }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: rgb(218, 28, 138);
+      transition: width 0.3s ease;
+    }
 
-        .back-link:hover {
-            text-decoration: underline;
-        }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-        footer {
-            font-size: 0.9rem;
-            color: #7f8c8d; /* Subtle gray for footer text */
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 200px; /* Adjusted footer position */
-        }
-        @media (max-width: 768px) {
-            .container {
-                width: 80%;
-            }
-            .contact-item img {
-                width: 25px;
-                height: 25px;
-            }
+    .contact {
+      padding: 150px 20px 80px;
+      text-align: center;
+    }
 
-            .contact-item a {
-                font-size: 1rem;
-            }
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      color: rgb(218, 28, 138);
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
 
-            footer {
-                font-size: 0.8rem;
-            }
-        }
-        @media (max-width: 480px) {
-            .container {
-                width: 90%;
-            }
+    .contact-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-            .contact-item img {
-                width: 20px;
-                height: 20px;
-            }
+    .contact-card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      flex: 1 1 300px;
+      transition: transform 0.3s ease;
+    }
 
-            .contact-item a {
-                font-size: 0.8rem;
-            }
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(218, 28, 138, 0.15);
+    }
 
-            footer {
-                font-size: 0.7rem;
-                margin-bottom: -30px;
-            }
-        }
-    </style>
+    .contact-icon {
+      font-size: 2.5rem;
+      color: rgb(218, 28, 138);
+      margin-bottom: 15px;
+    }
+
+    .contact-info {
+      font-size: 1.1rem;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .footer {
+      background: white;
+      color: rgb(218, 28, 138);
+      text-align: center;
+      padding: 40px 20px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">Contact Information</div>
-        <div class="contact-item">
-            <img src="img/email.png" alt="Email Icon">
-            <a href="mailto:assiaalilech07@gmail.com" id="email">assiaalilech07@gmail.com</a>
-        </div>
-        <div class="contact-item">
-            <img src="img/instagram.png" alt="Instagram Icon">
-            <a href="https://www.instagram.com/assia__alilech_09" id="instagram">assia__alilech_09</a>
-        </div>
-        <div class="contact-item">
-            <img src="img/phone-call.png" alt="Phone Icon">
-            <a href="tel:+212638417033" id="phone-call">0638417033</a>
-        </div>
-         <div class="contact-item">
-            <img src="img/whatsapp (1).png" alt="WhatsApp Icon">
-            <a href="https://wa.me/212638417033" id="whatsapp">WhatsApp</a>
-        </div>
-        <div class="contact-item">
-            <img src="img/linkedin.png" alt="LinkedIn Icon">
-            <a href="https://www.linkedin.com/in/Assia Alilech" id="linkedin">LinkedIn</a>
-        </div>
+  <header class="header">
+    <div class="header-content">
+      <img src="img/logo.webp" alt="Logo" class="logo" />
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Back to home link -->
-    <a href="index.html" class="back-link">Back to home</a>
-    <a href="portfolio.html" class="back-link">Back to Portfolio</a>
+  <section class="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <div class="contact-info">+212 6 12 34 56 78</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📧</div>
+        <div class="contact-info">assiaalilech07@gmail.com</div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2025 My Portfolio - All Rights Reserved
-    </footer>
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 My Portfolio - All Rights Reserved</p>
+      <p>Looking forward to hearing from you!</p>
+    </div>
+  </footer>
 </body>
 </html>
